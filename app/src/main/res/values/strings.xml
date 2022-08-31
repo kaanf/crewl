@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Crewl</string>
+    <string name="welcome">Welcome!</string>
+    <string name="login_screen_header_subtitle">Please enter your phone number to login.</string>
+    <string name="email">E-Mail Address</string>
+    <string name="phone">Phone Number</string>
+    <string name="country_code">Country Code</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <!-- &#160; Blank space code -->
+    <!-- Register text -->
+    <string name="dont_have_an_account">Don\'t have an account? &#160;</string>
+    <string name="get_started">Get Started</string>
+    <!-- Error text -->
+    <string name="phone_number_error">Invalid phone number. Please try again.</string>
+    <string name="country_code_error">Please enter your country code.</string>
+    <!-- -->
+    <string name="terms_of_policy_p1">By logging in, you agree to our\n</string>
+    <string name="terms_of_policy">terms of policy&#160;</string>
+    <string name="terms_of_policy_p2"> and&#160;</string>
+    <string name="privacy_policy"> privacy policy.</string>
+    <!-- -->
+    <string name="countries">Countries</string>
+    <string name="search">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

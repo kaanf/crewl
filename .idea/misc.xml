@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.16906474820143885" />
+        <entry key="app/src/main/res/drawable/bottom_sheet_default_bg.xml" value="0.3995" />
+        <entry key="app/src/main/res/drawable/button_default_bg.xml" value="0.2985" />
+        <entry key="app/src/main/res/drawable/button_input_bg.xml" value="0.3995" />
+        <entry key="app/src/main/res/drawable/button_transparent.xml" value="0.243" />
+        <entry key="app/src/main/res/drawable/divider_recycler_view_gray.xml" value="0.3995" />
+        <entry key="app/src/main/res/drawable/indicator_white_rounded.xml" value="0.282" />
+        <entry key="app/src/main/res/drawable/ripple_effect.xml" value="0.243" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.243" />
+        <entry key="app/src/main/res/font/inter.xml" value="0.4708333333333333" />
+        <entry key="app/src/main/res/font/inter_bold.xml" value="0.4708333333333333" />
+        <entry key="app/src/main/res/font/inter_light.xml" value="0.4708333333333333" />
+        <entry key="app/src/main/res/layout-v28/country_item.xml" value="0.3810810810810811" />
+        <entry key="app/src/main/res/layout-v28/fragment_login.xml" value="0.375" />
+        <entry key="app/src/main/res/layout-v28/item_country.xml" value="0.20585585585585586" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.41938405797101447" />
+        <entry key="app/src/main/res/layout/activity_second.xml" value="0.20585585585585586" />
+        <entry key="app/src/main/res/layout/component_toolbar.xml" value="0.240990990990991" />
+        <entry key="app/src/main/res/layout/custom_toolbar.xml" value="0.2803442028985507" />
+        <entry key="app/src/main/res/layout/fragment_base_activity.xml" value="0.41938405797101447" />
+        <entry key="app/src/main/res/layout/fragment_country_code.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_verification.xml" value="0.2418918918918919" />
+        <entry key="countryflags/src/main/res/drawable/flag_1f1e6_1f1e8.xml" value="0.3995" />
+        <entry key="countryflags/src/main/res/drawable/flag_1f3f4_e0067_e0062_e0065_e006e_e0067_e007f.xml" value="0.3995" />
+        <entry key="countryflags/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2995" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

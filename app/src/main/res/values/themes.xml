@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Crewl" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DefaultTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="colorAccent">@android:color/black</item>
+        <item name="colorSurface">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="BottomSheetDialogNormal" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetNormal</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomSheetNormal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_default_bg</item>
+    </style>
+
+    <attr name="countryCodePicker_BackgroundColor" format="reference|color" />
+    <attr name="countryCodePicker_SearchTextColor" format="reference|color" />
+    <attr name="countryCodePicker_HintTextColor" format="reference|color" />
+    <attr name="countryCodePicker_AccentColor" format="reference|color" />
+
+    <attr name="countryCodePicker_TitleTextAppearance" format="reference" />
+    <attr name="countryCodePicker_HintTextAppearance" format="reference" />
+    <attr name="countryCodePicker_ItemTextAppearance" format="reference" />
+
+    <attr name="countryCodePicker_TitleText" format="reference|string" />
+    <attr name="countryCodePicker_HintText" format="reference|string" />
+
+    <attr name="countryCodePicker_SearchIcon" format="reference" />
+    <attr name="countryCodePicker_CornerRadius" format="reference|dimension" />
+
+    <style name="CountryCodePicker.Base" parent="Theme.MaterialComponents.Light">
+        <item name="countryCodePicker_BackgroundColor">?colorBackgroundFloating</item>
+        <item name="countryCodePicker_SearchTextColor">#000000</item>
+        <item name="countryCodePicker_HintTextColor">#000000</item>
+        <item name="countryCodePicker_AccentColor">#000000</item>
+        <item name="countryCodePicker_TitleTextAppearance">?textAppearanceHeadline6</item>
+        <item name="countryCodePicker_HintTextAppearance">?textAppearanceBody2</item>
+        <item name="countryCodePicker_ItemTextAppearance">?textAppearanceBody1</item>
+        <item name="countryCodePicker_TitleText">#000000</item>
+        <item name="countryCodePicker_HintText">#000000</item>
+        <item name="countryCodePicker_SearchIcon">@drawable/ic_search</item>
+        <item name="countryCodePicker_CornerRadius">4dp</item>
+        <item name="colorAccent">?countryCodePicker_AccentColor</item>
+    </style>
+</resources>

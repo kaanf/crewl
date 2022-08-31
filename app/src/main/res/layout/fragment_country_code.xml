@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/countryCodeContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_14"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="8dp"
+    android:background="@drawable/bottom_sheet_default_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="@dimen/margin_50"
+        android:background="@drawable/indicator_white_rounded"
+        android:layout_height="@dimen/margin_3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_10" />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@drawable/button_input_bg"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/padding_14"
+        android:drawableTint="@color/default_ic_bg_passive"
+        android:elevation="@dimen/margin_5"
+        android:fontFamily="@font/inter_regular"
+        android:layout_below="@id/divider"
+        android:hint="@string/search"
+        android:inputType="textPhonetic"
+        android:imeOptions="actionDone"
+        android:letterSpacing="@dimen/default_letter_spacing_inter"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/default_input_text_active"
+        android:textColorHint="@color/default_input_text_hint"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/font_14"/>
+
+    <ImageView
+        android:id="@+id/flagImageView"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchEditText" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white"
+        android:layout_width="@dimen/size_30"
+        android:layout_below="@id/searchEditText"
+        android:layout_marginTop="@dimen/margin_30"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/countryPickerList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_20"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/padding_16"
+        android:scrollbarSize="@dimen/size_2"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_below="@+id/searchEditText"
+        app:layout_constraintHeight_min="128dp" />
+
+</RelativeLayout>

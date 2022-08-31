@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "849420383871",
+    "project_id": "crewl-a330d",
+    "storage_bucket": "crewl-a330d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849420383871:android:20972b1e3656012362b14a",
+        "android_client_info": {
+          "package_name": "com.example.crewl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849420383871-qp24qno7lb6149g2b76kdpta73q860qi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4RrS1fHBsFQScOC0cVUs_ma9l5zZEQRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849420383871-qp24qno7lb6149g2b76kdpta73q860qi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
