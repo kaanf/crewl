@@ -2,8 +2,8 @@ package com.example.crewl.domain.repositories
 
 import android.util.Log
 import com.example.crewl.data.models.Country
-import com.example.crewl.ui.bottomSheet.countryCode.providers.AssetCountryProvider
-import com.example.crewl.ui.bottomSheet.countryCode.providers.CountryListProvider
+import com.example.crewl.presentation.bottomSheet.countryCode.providers.AssetCountryProvider
+import com.example.crewl.presentation.bottomSheet.countryCode.providers.CountryListProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.*

@@ -7,25 +7,31 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.crewl.ui.fragment.login.LoginFragment"
+        android:name="com.example.crewl.presentation.fragment.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_countryCodeFragment"
-            app:popUpTo="@id/loginFragment"
-            app:destination="@id/countryCodeFragment" />
+            app:destination="@id/countryCodeFragment"
+            app:popUpTo="@id/loginFragment" />
         <action
             android:id="@+id/action_loginFragment_to_verificationFragment"
-            app:destination="@id/verificationFragment" />
+            app:destination="@id/verificationFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
 
     <dialog
         android:id="@+id/countryCodeFragment"
-        android:name="com.example.crewl.ui.bottomSheet.countryCode.CountryCodeFragment"
+        android:name="com.example.crewl.presentation.bottomSheet.countryCode.CountryCodeFragment"
         android:label="CountryCodeFragment" />
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.example.crewl.ui.bottomSheet.verification.VerificationFragment"
+        android:name="com.example.crewl.presentation.bottomSheet.verification.VerificationFragment"
         android:label="fragment_verification"
-        tools:layout="@layout/fragment_verification" />
+        tools:layout="@layout/fragment_verification">
+        <argument
+            android:name="phoneNumber"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
 </navigation>

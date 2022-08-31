@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_bg"
@@ -10,21 +10,33 @@
     android:padding="@dimen/padding_20"
     android:paddingStart="@dimen/padding_30"
     android:paddingEnd="@dimen/padding_30"
-    tools:context=".ui.bottomSheet.verification.VerificationFragment">
+    tools:context=".presentation.bottomSheet.verification.VerificationFragment">
+
+    <ImageView
+        android:id="@+id/leftArrowButton"
+        android:layout_width="@dimen/size_40"
+        android:layout_height="@dimen/size_40"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/button_input_bg"
+        android:contentDescription="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/headerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_10"
         android:fontFamily="@font/inter_semibold"
         android:letterSpacing="-0.04"
-        android:text="@string/welcome"
+        android:text="@string/verification"
         android:textColor="@color/default_header_text"
         android:textSize="@dimen/font_25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/leftArrowButton" />
 
     <TextView
         android:id="@+id/headerSubtitleText"
@@ -33,10 +45,81 @@
         android:layout_marginTop="@dimen/margin_4"
         android:fontFamily="@font/inter_regular"
         android:letterSpacing="-0.04"
-        android:text="@string/login_screen_header_subtitle"
+        android:text="@string/verification_subtitle"
         android:textColor="@color/default_subtitle_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerText" />
+
+    <TextView
+        android:id="@+id/phoneNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2"
+        android:fontFamily="@font/inter_semibold"
+        android:letterSpacing="-0.04"
+        android:text="@string/verification_subtitle"
+        android:textColor="@color/default_button_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerSubtitleText" />
+
+    <com.vicmikhailau.maskededittext.MaskedEditText
+        android:id="@+id/phoneEditText"
+        android:layout_width="@dimen/button_200"
+        android:layout_height="@dimen/button_50"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@drawable/button_input_bg"
+        android:elevation="@dimen/margin_5"
+        android:fontFamily="@font/inter_bold"
+        android:hint="@string/code"
+        android:inputType="numberDecimal"
+        android:letterSpacing="-0.04"
+        android:gravity="center"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/default_input_text_active"
+        android:textColorHint="@color/default_input_text_hint"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberText" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:layout_marginBottom="@dimen/margin_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/resendCodeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/margin_4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_50"
+            android:layout_below="@+id/resendCodeText"
+            android:layout_marginTop="@dimen/margin_14"
+            android:background="@drawable/button_default_bg"
+            android:elevation="@dimen/margin_10"
+            android:fontFamily="@font/inter_bold"
+            android:letterSpacing="-0.04"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingEnd="@dimen/padding_20"
+            android:text="@string/login"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_14"
+            app:backgroundTint="@null" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
