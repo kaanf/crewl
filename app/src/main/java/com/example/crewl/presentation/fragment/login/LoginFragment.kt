@@ -1,3 +1,9 @@
+/**
+ * @author Kaan Fırat
+ *
+ * Last updated time : 3 September 2022 05:34
+ */
+
 package com.example.crewl.presentation.fragment.login
 
 import android.os.Bundle
@@ -14,11 +20,11 @@ import com.example.crewl.databinding.FragmentLoginBinding
 import com.example.crewl.helper.ResourceHelper.getColor
 import com.example.crewl.helper.ResourceHelper.getFont
 import com.example.crewl.helper.Status
-import com.example.crewl.presentation.fragment.login.LoginFragmentHelper.Companion.font
 import com.example.crewl.utils.ValidationUtils.isMailValid
 import com.example.crewl.utils.ValidationUtils.isPasswordValid
 import com.example.crewl.utils.asString
 import com.example.crewl.utils.autoCleared
+import com.example.crewl.utils.font
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,8 +65,6 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
 
                         setClickable(isClickable = true)
                         setFocusable(isFocusable = true)
-
-                        Log.i("App.tag", "launchWhenStarted Success: called.")
                     }
                     is Status.Error -> {
                         binding.loginButton.setLoading(isLoading = false)
@@ -68,8 +72,6 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
 
                         setClickable(isClickable = true)
                         setFocusable(isFocusable = true)
-
-                        Log.i("App.tag", "launchWhenStarted Error: called.")
                     }
                     else -> {
                         binding.loginButton.setLoading(isLoading = true)
@@ -77,8 +79,6 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
 
                         setClickable(isClickable = false)
                         setFocusable(isFocusable = false)
-
-                        Log.i("App.tag", "launchWhenStarted Loading: called.")
                     }
                 }
             }

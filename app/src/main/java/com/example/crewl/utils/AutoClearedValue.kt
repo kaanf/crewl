@@ -1,3 +1,9 @@
+/**
+ * @author Kaan Fırat
+ *
+ * Last updated time : 3 September 2022 05:33
+ */
+
 package com.example.crewl.utils
 
 import androidx.fragment.app.Fragment
@@ -13,7 +19,7 @@ import kotlin.reflect.KProperty
  * Accessing this variable while the fragment's view is destroyed will throw NPE.
  */
 class AutoClearedValue<T : Any>(val fragment: Fragment) : ReadWriteProperty<Fragment, T> {
-    private var _value: T? = null
+    private var value: T? = null
 
     init {
         fragment.lifecycle.addObserver(object : DefaultLifecycleObserver {
@@ -21,7 +27,7 @@ class AutoClearedValue<T : Any>(val fragment: Fragment) : ReadWriteProperty<Frag
                 fragment.viewLifecycleOwnerLiveData.observe(fragment) { viewLifecycleOwner ->
                     viewLifecycleOwner?.lifecycle?.addObserver(object : DefaultLifecycleObserver {
                         override fun onDestroy(owner: LifecycleOwner) {
-                            _value = null
+                            value = null
                         }
                     })
                 }
@@ -30,17 +36,12 @@ class AutoClearedValue<T : Any>(val fragment: Fragment) : ReadWriteProperty<Frag
     }
 
     override fun getValue(thisRef: Fragment, property: KProperty<*>): T {
-        return _value ?: throw IllegalStateException(
+        return value ?: throw IllegalStateException(
             "should never call auto-cleared-value get when it might not be available"
         )
     }
 
     override fun setValue(thisRef: Fragment, property: KProperty<*>, value: T) {
-        _value = value
+        this.value = value
     }
 }
-
-/**
- * Creates an [AutoClearedValue] associated with this fragment.
- */
-fun <T : Any> Fragment.autoCleared() = AutoClearedValue<T>(this)
