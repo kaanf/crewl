@@ -4,13 +4,14 @@ import android.os.Bundle
 import androidx.core.text.buildSpannedString
 import androidx.core.text.color
 import androidx.core.widget.doOnTextChanged
+import androidx.lifecycle.ViewModelProvider
 import com.example.crewl.R
 import com.example.crewl.core.BaseFragment
 import com.example.crewl.databinding.FragmentPhoneBinding
-import com.example.crewl.domain.repositories.CountryCodeRepository
-import com.example.crewl.helpers.ConstantHelper
-import com.example.crewl.helpers.CountryCodeHelper
-import com.example.crewl.helpers.ResourceHelper
+import com.example.crewl.domain.repository.CountryCodeRepository
+import com.example.crewl.helper.ConstantHelper
+import com.example.crewl.helper.CountryCodeHelper
+import com.example.crewl.helper.ResourceHelper
 import com.example.crewl.manager.NavigationManager.Companion.safeNavigate
 import com.example.crewl.presentation.fragment.login.LoginFragmentDirections
 import com.example.crewl.presentation.fragment.login.LoginFragmentHelper.Companion.font
@@ -26,7 +27,7 @@ class PhoneFragment : BaseFragment<PhoneViewModel, FragmentPhoneBinding>() {
     override fun onCreate(savedInstanceState: Bundle?, viewModel: PhoneViewModel, binding: FragmentPhoneBinding) {
         this@PhoneFragment.binding = binding
 
-        val repository = CountryCodeRepository.fromAssets()
+        val repository = CountryCodeRepository.getFromAssets()
         CountryCodeHelper.setCustomRepository(repository = repository)
     }
 
@@ -93,6 +94,10 @@ class PhoneFragment : BaseFragment<PhoneViewModel, FragmentPhoneBinding>() {
         // Todo: Change directionId.
         val directionId = LoginFragmentDirections.actionLoginFragmentToCountryCodeFragment()
         navController.safeNavigate(direction = directionId)
+    }
+
+    override fun getViewModelFactory(): ViewModelProvider.Factory? {
+        return null
     }
 
 }

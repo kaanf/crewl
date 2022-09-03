@@ -1,7 +1,6 @@
 package com.example.crewl.utils
 
 import android.graphics.drawable.Drawable
-import android.text.Editable
 import androidx.appcompat.content.res.AppCompatResources
 import com.example.crewl.core.BaseApplication
 

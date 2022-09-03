@@ -2,13 +2,17 @@ package com.example.crewl.presentation.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.crewl.R
 import com.example.crewl.core.BaseActivity
 import com.example.crewl.databinding.ActivityMainBinding
-import com.example.crewl.helpers.ConstantHelper.Companion.isFirstStart
+import com.example.crewl.helper.ConstantHelper.Companion.isFirstStart
 import com.example.crewl.manager.AppManager
 import com.google.firebase.FirebaseApp
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel
@@ -20,11 +24,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     override val themeId: Int
         get() = R.style.DefaultTheme
 
-    override fun onCreate(
-        savedInstanceState: Bundle?,
-        viewModel: MainViewModel,
-        binding: ActivityMainBinding
-    ) {
+    override fun onCreate(savedInstanceState: Bundle?, viewModel: MainViewModel, binding: ActivityMainBinding) {
         this@MainActivity.binding = binding
         this@MainActivity.viewModel = viewModel
 

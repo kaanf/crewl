@@ -2,18 +2,19 @@ package com.example.crewl.core
 
 import android.app.Application
 import android.content.Context
-import androidx.lifecycle.LifecycleObserver
+import dagger.hilt.android.HiltAndroidApp
 
-class BaseApplication: Application(), LifecycleObserver {
+@HiltAndroidApp
+class BaseApplication: Application() {
     companion object {
-        private lateinit var application: BaseApplication
+        private lateinit var applicationContext: Context
         @JvmStatic
-        fun getContext(): Context = application.applicationContext
+        fun getContext(): Context = applicationContext
     }
 
     override fun onCreate() {
         super.onCreate()
 
-        application = this
+        BaseApplication.applicationContext = this.applicationContext
     }
 }

@@ -3,14 +3,15 @@ package com.example.crewl.presentation.bottomSheet.verification
 import android.os.Bundle
 import androidx.core.text.buildSpannedString
 import androidx.core.text.color
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.crewl.R
 import com.example.crewl.core.BaseFragment
 import com.example.crewl.databinding.FragmentVerificationBinding
-import com.example.crewl.helpers.ApplicationLog.setLog
-import com.example.crewl.helpers.ResourceHelper
+import com.example.crewl.helper.ApplicationLog.setLog
+import com.example.crewl.helper.ResourceHelper
 import com.example.crewl.presentation.fragment.login.LoginFragmentDirections
 import com.example.crewl.presentation.fragment.login.LoginFragmentHelper.Companion.font
 import com.google.firebase.FirebaseException
@@ -34,6 +35,8 @@ class VerificationFragment : BaseFragment<VerificationViewModel, FragmentVerific
     private var phoneNumber: String? = null
 
     override fun getViewModel(): Class<VerificationViewModel> = VerificationViewModel::class.java
+
+    override fun getViewModelFactory(): ViewModelProvider.Factory? = null
 
     override fun getViewBinding(): FragmentVerificationBinding = FragmentVerificationBinding.inflate(layoutInflater)
 

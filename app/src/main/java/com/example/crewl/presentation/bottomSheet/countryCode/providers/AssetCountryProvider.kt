@@ -1,7 +1,7 @@
 package com.example.crewl.presentation.bottomSheet.countryCode.providers
 
 import com.example.crewl.core.BaseApplication
-import com.example.crewl.data.models.Country
+import com.example.crewl.data.model.Country
 
 class AssetCountryProvider(private val fileName: String) : CountryListProvider {
     private val applicationContext = BaseApplication.getContext()

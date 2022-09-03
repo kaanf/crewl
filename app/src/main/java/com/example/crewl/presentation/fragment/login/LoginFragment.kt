@@ -5,26 +5,33 @@ import android.util.Log
 import android.view.View
 import androidx.core.text.buildSpannedString
 import androidx.core.text.color
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.crewl.R
 import com.example.crewl.core.BaseFragment
 import com.example.crewl.databinding.FragmentLoginBinding
-import com.example.crewl.helpers.ResourceHelper.getColor
-import com.example.crewl.helpers.ResourceHelper.getFont
-import com.example.crewl.helpers.Status
+import com.example.crewl.helper.ResourceHelper.getColor
+import com.example.crewl.helper.ResourceHelper.getFont
+import com.example.crewl.helper.Status
 import com.example.crewl.presentation.fragment.login.LoginFragmentHelper.Companion.font
 import com.example.crewl.utils.ValidationUtils.isMailValid
 import com.example.crewl.utils.ValidationUtils.isPasswordValid
 import com.example.crewl.utils.asString
+import com.example.crewl.utils.autoCleared
+import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
-    private lateinit var binding: FragmentLoginBinding
-    private lateinit var viewModel: LoginViewModel
+    private var binding: FragmentLoginBinding by autoCleared()
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun getViewModel(): Class<LoginViewModel> = LoginViewModel::class.java
 
-    override fun getViewBinding(): FragmentLoginBinding =
-        FragmentLoginBinding.inflate(layoutInflater)
+    override fun getViewModelFactory(): ViewModelProvider.Factory? = null
+
+    override fun getViewBinding(): FragmentLoginBinding = FragmentLoginBinding.inflate(layoutInflater)
 
     override fun onCreate(
         savedInstanceState: Bundle?,
@@ -32,7 +39,6 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
         binding: FragmentLoginBinding
     ) {
         this@LoginFragment.binding = binding
-        this@LoginFragment.viewModel = viewModel
 
         checkIfUserIsLoggedIn()
     }
@@ -48,7 +54,31 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
             viewModel.signInState.collect { status ->
                 when (status) {
                     is Status.Success -> {
+                        binding.loginButton.setLoading(isLoading = false)
+                        Snackbar.make(requireView(), "Success", Snackbar.LENGTH_SHORT).show()
 
+                        setClickable(isClickable = true)
+                        setFocusable(isFocusable = true)
+
+                        Log.i("App.tag", "launchWhenStarted Success: called.")
+                    }
+                    is Status.Error -> {
+                        binding.loginButton.setLoading(isLoading = false)
+                        Snackbar.make(requireView(), "Error", Snackbar.LENGTH_SHORT).show()
+
+                        setClickable(isClickable = true)
+                        setFocusable(isFocusable = true)
+
+                        Log.i("App.tag", "launchWhenStarted Error: called.")
+                    }
+                    else -> {
+                        binding.loginButton.setLoading(isLoading = true)
+                        Snackbar.make(requireView(), "Loading", Snackbar.LENGTH_SHORT).show()
+
+                        setClickable(isClickable = false)
+                        setFocusable(isFocusable = false)
+
+                        Log.i("App.tag", "launchWhenStarted Loading: called.")
                     }
                 }
             }
@@ -67,16 +97,8 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
             val isPasswordValid = isPasswordValid(password = password)
 
             if (isMailValid && isPasswordValid) {
-                binding.loginButton.setLoading(true)
-                binding.mailEditText.isClickable = false
-                binding.mailEditText.isFocusable = false
-                binding.passwordEditText.isClickable = false
-                binding.passwordEditText.isFocusable = false
-                binding.mailEditText.alpha = 0.7f
-                binding.passwordEditText.alpha = 0.7f
+                viewModel.signIn(mail = mail, password = password)
             } else {
-                binding.loginButton.setLoading(false)
-
                 if (!isMailValid) {
                     binding.mailEditText.error = "Error, please try again mail."
                     binding.mailEditText.requestFocus()
@@ -86,6 +108,16 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
                 }
             }
         }
+    }
+
+    private fun setClickable(isClickable: Boolean) {
+        binding.mailEditText.isClickable = isClickable
+        binding.passwordEditText.isClickable = isClickable
+    }
+
+    private fun setFocusable(isFocusable: Boolean) {
+        binding.mailEditText.isFocusable = isFocusable
+        binding.passwordEditText.isFocusable = isFocusable
     }
 
     private fun setSpannableText() {

@@ -1,8 +1,8 @@
 package com.example.crewl.presentation.bottomSheet.countryCode
 
 import androidx.lifecycle.*
-import com.example.crewl.data.models.Country
-import com.example.crewl.domain.repositories.CountryCodeRepository
+import com.example.crewl.data.model.Country
+import com.example.crewl.domain.repository.CountryCodeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -12,7 +12,7 @@ class CountryCodeViewModel(private val repository: CountryCodeRepository): ViewM
 
     fun loadCountries() {
         viewModelScope.launch {
-            cachedAllCountries = repository.countries()
+            cachedAllCountries = repository.getCountries()
             countries.postValue(cachedAllCountries)
         }
     }

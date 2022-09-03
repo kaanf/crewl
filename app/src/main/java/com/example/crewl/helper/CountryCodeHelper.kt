@@ -1,8 +1,8 @@
-package com.example.crewl.helpers
+package com.example.crewl.helper
 
 import androidx.fragment.app.FragmentManager
 import com.example.crewl.presentation.bottomSheet.countryCode.CountryCodeFragment
-import com.example.crewl.domain.repositories.CountryCodeRepository
+import com.example.crewl.domain.repository.CountryCodeRepository
 
 class CountryCodeHelper {
     companion object {
@@ -12,7 +12,7 @@ class CountryCodeHelper {
 
         private var customRepository: CountryCodeRepository? = null
 
-        internal fun getCountryRepository() = customRepository ?: CountryCodeRepository.fromAssets()
+        internal fun getCountryRepository() = customRepository ?: CountryCodeRepository.getFromAssets()
 
         fun showDialog(fragmentManager: FragmentManager) {
             CountryCodeFragment().show(fragmentManager, CountryCodeFragment.TAG)

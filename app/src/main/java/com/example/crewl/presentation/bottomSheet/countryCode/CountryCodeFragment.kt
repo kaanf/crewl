@@ -12,15 +12,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.crewl.R
-import com.example.crewl.data.models.Country
+import com.example.crewl.data.model.Country
 import com.example.crewl.databinding.FragmentCountryCodeBinding
-import com.example.crewl.helpers.CountryCodeHelper
-import com.example.crewl.helpers.ResourceHelper.getDrawable
+import com.example.crewl.helper.CountryCodeHelper
+import com.example.crewl.helper.ResourceHelper.getDrawable
 import com.example.crewl.presentation.bottomSheet.countryCode.adapter.CountryCodeAdapter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-
 
 class CountryCodeFragment : BottomSheetDialogFragment() {
     companion object {

@@ -11,7 +11,7 @@ import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
 import com.example.crewl.R
 import com.example.crewl.databinding.ComponentButtonBinding
-import com.example.crewl.helpers.ResourceHelper.getColor
+import com.example.crewl.helper.ResourceHelper.getColor
 
 private const val BUTTON_TEXT_STYLE_NORMAL = 0
 private const val BUTTON_TEXT_STYLE_MEDIUM = 1
@@ -20,7 +20,7 @@ private const val BUTTON_TEXT_STYLE_BOLD = 2
 class ProgressButton : LinearLayout {
     private lateinit var binding: ComponentButtonBinding
 
-    var density = 0f
+    private var density = 0f
 
     private var header: String? = null
     private var buttonBackground = 0

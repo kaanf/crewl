@@ -1,4 +1,4 @@
-package com.example.crewl.helpers
+package com.example.crewl.helper
 
 sealed class Status<out T, out F>(val data : T? = null , val message : F? = null) {
     class Success<T>(data : T) : Status<T, Nothing>(data)

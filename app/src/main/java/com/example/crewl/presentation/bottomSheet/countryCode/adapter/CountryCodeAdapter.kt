@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.countryflags.getCountryFlagWithResID
 import com.example.crewl.R
 import com.example.crewl.core.BaseApplication
-import com.example.crewl.data.models.Country
+import com.example.crewl.data.model.Country
 
 internal class CountryCodeAdapter(
     private val onCountryClicked: (Country) -> Unit

@@ -2,7 +2,7 @@ package com.example.crewl.presentation.bottomSheet.countryCode
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.crewl.domain.repositories.CountryCodeRepository
+import com.example.crewl.domain.repository.CountryCodeRepository
 
 class CountryCodeViewModelFactory {
     class Factory(private val repository: CountryCodeRepository) : ViewModelProvider.NewInstanceFactory() {

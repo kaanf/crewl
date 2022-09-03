@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VM: ViewModel, VB: ViewBinding>: Fragment() {
+abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
     private lateinit var binding: VB
     private lateinit var viewModel: VM
 
@@ -21,6 +21,8 @@ abstract class BaseFragment<VM: ViewModel, VB: ViewBinding>: Fragment() {
     protected lateinit var navController: NavController
 
     protected abstract fun getViewModel(): Class<VM>
+
+    protected abstract fun getViewModelFactory(): ViewModelProvider.Factory?
 
     protected abstract fun getViewBinding(): VB
 
@@ -34,7 +36,12 @@ abstract class BaseFragment<VM: ViewModel, VB: ViewBinding>: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = getViewBinding()
-        viewModel = ViewModelProvider(this)[getViewModel()]
+
+        getViewModelFactory()?.let { factory ->
+            viewModel = ViewModelProvider(this, factory)[getViewModel()]
+        } ?: run {
+            viewModel = ViewModelProvider(this)[getViewModel()]
+        }
 
         navController = findNavController()
 

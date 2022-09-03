@@ -5,7 +5,7 @@
  */
 
 
-package com.example.crewl.data.models
+package com.example.crewl.data.model
 
 import android.graphics.Typeface
 import android.text.Spannable
