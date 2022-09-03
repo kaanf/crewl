@@ -4,7 +4,6 @@
  * Last updated time : 25 August 2022 16:33
  */
 
-
 package com.example.crewl.data.model
 
 import android.graphics.Typeface
@@ -42,12 +41,11 @@ data class Country(
      * Flag emoji support unfortunately is dependant on device/version and some flags
      * may not be available on some devices.
      */
-    val flagEmoji: String
+    private val flagEmoji: String = if (isoCode.isNotBlank()) {
+        isoCodeToEmoji(isoCode)
+    } else ""
 
     init {
-        flagEmoji = if (isoCode.isNotBlank()) {
-            isoCodeToEmoji(isoCode)
-        } else ""
 
         val fullName = "$flagEmoji +$phoneCode $countryName"
 

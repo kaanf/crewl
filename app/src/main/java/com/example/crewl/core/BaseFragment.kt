@@ -1,3 +1,9 @@
+/**
+ * @author Kaan Fırat
+ *
+ * Last updated time : 3 September 2022 05:33
+ */
+
 package com.example.crewl.core
 
 import android.os.Bundle

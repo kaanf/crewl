@@ -1,3 +1,9 @@
+/**
+ * @author Kaan Fırat
+ *
+ * Last updated time : 3 September 2022 05:33
+ */
+
 package com.example.crewl.presentation.fragment.phone
 
 import android.os.Bundle
@@ -14,8 +20,8 @@ import com.example.crewl.helper.CountryCodeHelper
 import com.example.crewl.helper.ResourceHelper
 import com.example.crewl.manager.NavigationManager.Companion.safeNavigate
 import com.example.crewl.presentation.fragment.login.LoginFragmentDirections
-import com.example.crewl.presentation.fragment.login.LoginFragmentHelper.Companion.font
 import com.example.crewl.utils.ValidationUtils
+import com.example.crewl.utils.font
 
 class PhoneFragment : BaseFragment<PhoneViewModel, FragmentPhoneBinding>() {
     private lateinit var binding: FragmentPhoneBinding

@@ -1,3 +1,9 @@
+/**
+ * @author Kaan Fırat
+ *
+ * Last updated time : 1 September 2022 12:51
+ */
+
 package com.example.crewl.domain.repository
 
 import com.example.crewl.data.model.Country

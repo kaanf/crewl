@@ -1,3 +1,9 @@
+/**
+ * @author Kaan Fırat
+ *
+ * Last updated time : 1 September 2022 14:10
+ */
+
 package com.example.crewl.utils
 
 import android.graphics.drawable.Drawable
