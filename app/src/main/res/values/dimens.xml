@@ -142,7 +142,7 @@
     <!--endregion Font Sizes-->
 
     <!--region Button Sizes-->
-    <dimen name="button_50">50dp</dimen>
+    <dimen name="button_55">55dp</dimen>
     <dimen name="button_200">200dp</dimen>
 
 </resources>

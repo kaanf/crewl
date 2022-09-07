@@ -1,3 +1,8 @@
+/**
+ * @author Kaan Fırat
+ * Last updated time : 3 September 2022 12:55
+ */
+
 package com.example.crewl.utils
 
 object ValidationUtils {

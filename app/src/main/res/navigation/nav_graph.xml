@@ -3,21 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
-
+    app:startDestination="@id/mailFragment">
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.crewl.presentation.fragment.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login">
+        android:id="@+id/mailFragment"
+        android:name="com.example.crewl.presentation.fragment.login.MailFragment"
+        android:label="fragment_mail"
+        tools:layout="@layout/fragment_mail" >
         <action
-            android:id="@+id/action_loginFragment_to_countryCodeFragment"
+            android:id="@+id/action_mailFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/mailFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.crewl.presentation.fragment.login.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_countryCodeFragment"
             app:destination="@id/countryCodeFragment"
-            app:popUpTo="@id/loginFragment" />
+            app:popUpTo="@id/signInFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_verificationFragment"
+            android:id="@+id/action_signInFragment_to_verificationFragment"
             app:destination="@id/verificationFragment"
-            app:popUpTo="@id/loginFragment" />
+            app:popUpTo="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <dialog
@@ -34,4 +46,9 @@
             android:defaultValue=""
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.crewl.presentation.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

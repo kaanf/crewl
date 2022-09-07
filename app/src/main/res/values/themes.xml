@@ -11,7 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
-        <item name="android:windowBackground">@drawable/logo_with_bg</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
         <!-- Customize your theme here. -->
     </style>
 

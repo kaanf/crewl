@@ -24,11 +24,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
 
     protected val Fragment.name: String by lazy { javaClass.simpleName }
 
-    protected lateinit var navController: NavController
-
     protected abstract fun getViewModel(): Class<VM>
-
-    protected abstract fun getViewModelFactory(): ViewModelProvider.Factory?
 
     protected abstract fun getViewBinding(): VB
 
@@ -43,13 +39,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
     ): View? {
         binding = getViewBinding()
 
-        getViewModelFactory()?.let { factory ->
-            viewModel = ViewModelProvider(this, factory)[getViewModel()]
-        } ?: run {
-            viewModel = ViewModelProvider(this)[getViewModel()]
-        }
-
-        navController = findNavController()
+        viewModel = ViewModelProvider(this)[getViewModel()]
 
         onCreate(savedInstanceState, viewModel, binding)
 

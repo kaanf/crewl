@@ -12,8 +12,8 @@ import com.example.crewl.core.BaseFragment
 import com.example.crewl.databinding.FragmentVerificationBinding
 import com.example.crewl.helper.ApplicationLog.setLog
 import com.example.crewl.helper.ResourceHelper
-import com.example.crewl.presentation.fragment.login.LoginFragmentDirections
-import com.example.crewl.presentation.fragment.login.LoginFragmentHelper.Companion.font
+import com.example.crewl.presentation.fragment.login.SignInFragmentDirections
+import com.example.crewl.utils.font
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -35,8 +35,6 @@ class VerificationFragment : BaseFragment<VerificationViewModel, FragmentVerific
     private var phoneNumber: String? = null
 
     override fun getViewModel(): Class<VerificationViewModel> = VerificationViewModel::class.java
-
-    override fun getViewModelFactory(): ViewModelProvider.Factory? = null
 
     override fun getViewBinding(): FragmentVerificationBinding = FragmentVerificationBinding.inflate(layoutInflater)
 
@@ -99,7 +97,7 @@ class VerificationFragment : BaseFragment<VerificationViewModel, FragmentVerific
         auth.signInWithCredential(credential).addOnCompleteListener(requireActivity()
         ) { task ->
             if (task.isSuccessful) {
-                val directionId: NavDirections = LoginFragmentDirections.actionLoginFragmentToVerificationFragment()
+                val directionId: NavDirections = SignInFragmentDirections.actionSignInFragmentToVerificationFragment()
                 findNavController().navigate(directionId)
             }
         }
@@ -113,5 +111,4 @@ class VerificationFragment : BaseFragment<VerificationViewModel, FragmentVerific
             .setCallbacks(callbacks)
             .build()
     }
-
 }

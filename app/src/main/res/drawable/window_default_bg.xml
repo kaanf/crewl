@@ -2,6 +2,6 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@drawable/logo_with_bg" />
+    <item android:drawable="@drawable/splash_background" />
 
 </layer-list>
