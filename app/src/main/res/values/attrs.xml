@@ -2,13 +2,41 @@
 <resources>
     <declare-styleable name="ProgressButton">
         <attr name="header" format="string" />
-        <attr name="subtitle" format="string" />
         <attr name="buttonBackground" format="integer" />
 
         <attr name="textStyle" format="integer">
             <flag name="normal" value="0" />
             <flag name="medium" value="1" />
             <flag name="bold" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomEditText">
+        <attr name="inputValue" format="string" />
+        <attr name="inputHint" format="string" />
+        <attr name="inputStartIcon" format="reference" />
+        <attr name="inputEndIcon" format="reference" />
+        <attr name="infoText" format="string" />
+        <attr name="maxLength" format="integer" />
+        <attr name="fontSize" format="integer" />
+        <attr name="autoFill" format="string" />
+
+        <attr name="inputTextAlignment" format="integer">
+            <flag name="normal" value="0" />
+            <flag name="start" value="1" />
+            <flag name="center" value="2" />
+        </attr>
+
+        <attr name="inputPasswordToggle" format="boolean" />
+
+        <attr name="inputEnabled" format="boolean" />
+
+        <attr name="inputTextType">
+            <flag name="text" value="0" />
+            <flag name="email" value="1" />
+            <flag name="capFirst" value="2" />
+            <flag name="capWords" value="3" />
+            <flag name="password" value="4" />
         </attr>
     </declare-styleable>
 </resources>

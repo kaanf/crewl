@@ -8,9 +8,7 @@
     android:background="@color/default_bg"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:padding="@dimen/padding_20"
-    android:paddingStart="@dimen/padding_30"
-    android:paddingEnd="@dimen/padding_30"
+    android:padding="@dimen/padding_30"
     tools:context=".presentation.fragment.phone.PhoneFragment">
 
     <TextView
@@ -43,9 +41,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/countryCodeButton"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/button_50"
+        android:layout_height="@dimen/button_55"
         android:layout_marginTop="@dimen/margin_24"
-        android:background="@drawable/button_input_bg"
+        android:background="@drawable/edit_text_input_background"
         android:elevation="@dimen/margin_5"
         android:fontFamily="@font/inter_regular"
         android:hint="@string/country_code"
@@ -68,9 +66,9 @@
     <com.vicmikhailau.maskededittext.MaskedEditText
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/button_50"
+        android:layout_height="@dimen/button_55"
         android:layout_marginTop="@dimen/margin_12"
-        android:background="@drawable/button_input_bg"
+        android:background="@drawable/edit_text_input_background"
         android:drawableStart="@drawable/ic_phone"
         android:drawablePadding="@dimen/padding_14"
         android:drawableTint="@color/default_ic_bg_passive"
@@ -93,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:layout_marginBottom="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -101,8 +99,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sendCodeButton"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_50"
-            android:layout_marginTop="@dimen/margin_14"
+            android:layout_height="@dimen/button_55"
             android:background="@drawable/button_default_bg"
             android:elevation="@dimen/margin_10"
             android:fontFamily="@font/inter_bold"

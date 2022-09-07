@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Crewl</string>
-    <string name="welcome">Welcome!</string>
+    <string name="sign_in_with_mail">Sign in with your mail</string>
+    <string name="enter_your_password">Enter your password</string>
     <string name="login_screen_header_subtitle">Enter your e-mail address and password to login.</string>
     <string name="phone_number_authentication_subtitle">Please enter your phone number to login.</string>
     <string name="phone_number_authentication_header">Your Phone</string>
@@ -10,6 +11,8 @@
     <string name="country_code">Country Code</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <!-- Button text -->
+    <string name="continueText">Continue</string>
     <!-- &#160; Blank space code -->
     <!-- Register text -->
     <string name="dont_have_an_account">Don\'t have an account? &#160;</string>
@@ -35,4 +38,8 @@
     <string name="did_not_get_the_code">Did no\'t get the code?&#160;</string>
     <string name="resend">Resend.</string>
     <!-- -->
+    <!-- Error handling -->
+    <string name="login_error_no_account">There are no account with this e-mail account. Please register.</string>
+    <string name="login_error_wrong_mail">Error, please try again mail.</string>
+    <string name="login_error_wrong_password">Error, please try again password.</string>
 </resources>

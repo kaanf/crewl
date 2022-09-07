@@ -1,7 +1,7 @@
 package com.example.crewl.di
 
-import com.example.crewl.data.repository.LoginRepositoryImpl
-import com.example.crewl.domain.repository.LoginRepository
+import com.example.crewl.data.repository.SignInRepositoryImpl
+import com.example.crewl.domain.repository.SignInRepository
 import com.example.crewl.helper.FirebaseUserActions
 import dagger.Module
 import dagger.Provides
@@ -14,6 +14,6 @@ import javax.inject.Singleton
 class RepositoryModule {
     @Singleton
     @Provides
-    fun provideLoginRepository(firebaseUserActions: FirebaseUserActions): LoginRepository =
-        LoginRepositoryImpl(firebaseUserActions = firebaseUserActions)
+    fun provideLoginRepository(firebaseUserActions: FirebaseUserActions): SignInRepository =
+        SignInRepositoryImpl(firebaseUserActions = firebaseUserActions)
 }

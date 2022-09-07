@@ -9,9 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="default_button_bg">#E37624</color>
-    <color name="default_input_bg">#121A2E</color>
-    <color name="default_bg">#091228</color>
-    <color name="default_ic_bg_passive">#A8A8A8</color>
+    <color name="default_input_bg">#222222</color>
+    <color name="default_bg">#0f0f0f</color>
+    <color name="default_ic_bg_passive">#BCBCBC</color>
     <color name="default_ic_bg_active">#E37624</color>
 
     <color name="default_subtitle_text">#ACACAC</color>
@@ -22,4 +22,6 @@
 
     <color name="divider_gray">#2D323D</color>
     <color name="indicator_white_color">#DBDBDB</color>
+
+    <color name="default_error">#F77E87</color>
 </resources>

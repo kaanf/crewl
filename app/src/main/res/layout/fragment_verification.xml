@@ -17,7 +17,7 @@
         android:layout_width="@dimen/size_40"
         android:layout_height="@dimen/size_40"
         android:layout_marginTop="@dimen/margin_10"
-        android:background="@drawable/button_input_bg"
+        android:background="@drawable/edit_text_input_background"
         android:contentDescription="@null"
         android:scaleType="centerInside"
         android:src="@drawable/ic_left_arrow"
@@ -67,9 +67,9 @@
     <com.vicmikhailau.maskededittext.MaskedEditText
         android:id="@+id/phoneEditText"
         android:layout_width="@dimen/button_200"
-        android:layout_height="@dimen/button_50"
+        android:layout_height="@dimen/button_55"
         android:layout_marginTop="@dimen/margin_15"
-        android:background="@drawable/button_input_bg"
+        android:background="@drawable/edit_text_input_background"
         android:elevation="@dimen/margin_5"
         android:fontFamily="@font/inter_bold"
         android:hint="@string/code"
@@ -85,6 +85,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phoneNumberText" />
+
+    <EditText
+        android:id="@+id/mailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_55"
+        android:layout_marginTop="@dimen/margin_24"
+        android:background="@drawable/edit_text_input_background"
+        android:drawableStart="@drawable/ic_mail"
+        android:drawablePadding="@dimen/padding_14"
+        android:drawableTint="@color/default_ic_bg_passive"
+        android:elevation="@dimen/margin_5"
+        android:fontFamily="@font/inter_regular"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="-0.04"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/default_input_text_active"
+        android:textColorHint="@color/default_input_text_hint"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneEditText" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -105,7 +129,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_50"
+            android:layout_height="@dimen/button_55"
             android:layout_below="@+id/resendCodeText"
             android:layout_marginTop="@dimen/margin_14"
             android:background="@drawable/button_default_bg"

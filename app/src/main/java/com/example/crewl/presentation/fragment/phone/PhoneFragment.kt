@@ -10,7 +10,7 @@ import android.os.Bundle
 import androidx.core.text.buildSpannedString
 import androidx.core.text.color
 import androidx.core.widget.doOnTextChanged
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.crewl.R
 import com.example.crewl.core.BaseFragment
 import com.example.crewl.databinding.FragmentPhoneBinding
@@ -18,8 +18,8 @@ import com.example.crewl.domain.repository.CountryCodeRepository
 import com.example.crewl.helper.ConstantHelper
 import com.example.crewl.helper.CountryCodeHelper
 import com.example.crewl.helper.ResourceHelper
-import com.example.crewl.manager.NavigationManager.Companion.safeNavigate
-import com.example.crewl.presentation.fragment.login.LoginFragmentDirections
+import com.example.crewl.manager.NavigationManager.navigateSafely
+import com.example.crewl.presentation.fragment.login.SignInFragmentDirections
 import com.example.crewl.utils.ValidationUtils
 import com.example.crewl.utils.font
 
@@ -47,7 +47,7 @@ class PhoneFragment : BaseFragment<PhoneViewModel, FragmentPhoneBinding>() {
             showCountryCodeDialog()
         }
 
-        navController.currentBackStackEntry?.savedStateHandle?.getLiveData<MutableList<String>>("data")?.observe(viewLifecycleOwner) { data ->
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<MutableList<String>>("data")?.observe(viewLifecycleOwner) { data ->
             val builder = StringBuilder()
             builder.append("(+${data[0]}) ${data[1]}")
 
@@ -89,8 +89,8 @@ class PhoneFragment : BaseFragment<PhoneViewModel, FragmentPhoneBinding>() {
                 phoneNumber = countryCode + binding.phoneEditText.unMaskedText
 
                 phoneNumber?.let { number ->
-                    val directionId = LoginFragmentDirections.actionLoginFragmentToVerificationFragment(phoneNumber = number)
-                    navController.safeNavigate(direction = directionId)
+                    val directionId = SignInFragmentDirections.actionSignInFragmentToVerificationFragment(phoneNumber = number)
+                    findNavController().navigateSafely(direction = directionId)
                 }
             }
         }
@@ -98,12 +98,7 @@ class PhoneFragment : BaseFragment<PhoneViewModel, FragmentPhoneBinding>() {
 
     private fun showCountryCodeDialog() {
         // Todo: Change directionId.
-        val directionId = LoginFragmentDirections.actionLoginFragmentToCountryCodeFragment()
-        navController.safeNavigate(direction = directionId)
+        val directionId = SignInFragmentDirections.actionSignInFragmentToCountryCodeFragment()
+        findNavController().navigateSafely(direction = directionId)
     }
-
-    override fun getViewModelFactory(): ViewModelProvider.Factory? {
-        return null
-    }
-
 }
