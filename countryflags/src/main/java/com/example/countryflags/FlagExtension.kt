@@ -1,7 +1,7 @@
 /**
  * @author Kaan Fırat
  *
- * Last updated time : 25 August 2022 15:03
+ * Last updated time : 07 September 2022 15:04
  */
 
 package com.example.countryflags
